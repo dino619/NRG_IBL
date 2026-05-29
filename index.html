@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebGPU Image-Based Lighting</title>
+  </head>
+  <body>
+    <canvas id="gpu-canvas"></canvas>
+    <aside id="controls" class="panel">
+      <h1>Image-Based Lighting</h1>
+      <label>
+        Environment
+        <select id="environment">
+          <option value="venice_sunset">Venice Sunset</option>
+          <option value="studio_small_09">Studio Small 09</option>
+          <option value="kiara_1_dawn">Kiara 1 Dawn</option>
+        </select>
+      </label>
+      <label>
+        Model
+        <select id="model">
+          <option value="sphere">Sphere</option>
+          <option value="bunny">Stanford Bunny</option>
+          <option value="dragon">Stanford Dragon</option>
+        </select>
+      </label>
+      <label>
+        View mode
+        <select id="viewMode">
+          <option value="final">Final PBR</option>
+          <option value="compare-env">Environment A/B</option>
+          <option value="roughness-strip">Roughness spheres</option>
+        </select>
+      </label>
+      <label>
+        Albedo
+        <input id="albedo" type="color" value="#d7d1c5" />
+      </label>
+      <label>
+        Metallic <span id="metallicValue">0.00</span>
+        <input id="metallic" type="range" min="0" max="1" step="0.01" value="0" />
+      </label>
+      <label>
+        Roughness <span id="roughnessValue">0.35</span>
+        <input id="roughness" type="range" min="0.02" max="1" step="0.01" value="0.35" />
+      </label>
+      <label>
+        AO <span id="aoValue">1.00</span>
+        <input id="ao" type="range" min="0" max="1" step="0.01" value="1" />
+      </label>
+      <div class="toggles">
+        <label><input id="diffuseIBL" type="checkbox" checked /> Diffuse IBL</label>
+        <label><input id="specularIBL" type="checkbox" checked /> Specular IBL</label>
+        <label><input id="showSkybox" type="checkbox" checked /> Skybox</label>
+      </div>
+      <div id="preprocessStatus" class="status">Starting WebGPU...</div>
+    </aside>
+    <aside id="stats" class="panel stats"></aside>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

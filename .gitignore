@@ -1,0 +1,15 @@
+node_modules/
+dist/
+/assets/
+scripts/
+*.log
+*.out.log
+*.err.log
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+Seminars 2025-26.pdf
+Image-Based.pdf
+Image-Based Modeling and Lighting.pdf
+EGauthorGuidelines-cgf-fin.tex
